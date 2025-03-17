@@ -1,9 +1,5 @@
-from flask import Flask
+from app import app
 
-# Создаем объект приложения Flask
-app = Flask(__name__)
-
-# Определяем маршрут и привязываем его к функции
 @app.route("/hello")
 def hello():
     return "Hello, world!"
@@ -31,9 +27,5 @@ def user(name, age):
     if age <= 0:
         return "Возрост не может быть меньше 0"
     return f"Hello, {name}. You are {age} years old."
-
-# Запуск приложения
-if __name__ == "__main__":
-    app.run(debug=True)
 
 
